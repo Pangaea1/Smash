@@ -1,0 +1,390 @@
+{
+	"name": "SmashU",
+	"altname": "Ultimate",
+	"author": [
+		"Pangaea"
+	],
+	"ticks": {
+		"night1": 45,
+		"night": 40
+	},
+	"border": "",
+	"nonPeak": true,
+	"closedSetup": true,
+	"delayedConversionMsg": true,
+	"checkNoVoters": true,
+	"rolesWin": true,
+	"summary": "",
+	"minplayers": 3,
+	"killmsg": "~Player~ (~Role~) was knocked out of the arena!",
+	"lynchmsg": "~Player~ (~Role~) was disqualified from the competition!",
+	"tips": {}.
+	"sides": [
+		{
+			"translation": "Super Smash Bros. Brawlers",
+			"side": "a",
+			"winmsg": ""
+		},
+		{
+			"translation": "Super Smash Bros. Bralwers",
+			"side": "b",
+			"winmsg": ""
+		},
+		{
+			"translation": "Mario's Enemies",
+			"side": "mario_enemies"
+		},
+		{
+			"translation": "Bowser's Enemies",
+			"side": "bowser_enemies"
+		},
+		{
+			"translation": "Kirby's Enemies",
+			"side": "kirby_enemies"
+		},
+		{
+			"translation": "Meta Knight's Enemies",
+			"side": "meta_enemies"
+		},
+		{
+			"translation": "Pikachu's Enemies",
+			"side": "pikachu_enemies"
+		},
+		{
+			"translation": "Mewtwo's Enemies",
+			"side": "mewtwo_enemies"
+		},
+		{
+			"translation": "Link's Enemies",
+			"side": "link_enemies"
+		},
+		{
+			"translation": "Ganondorf's Enemies",
+			"side": "ganondorf_enemies"
+		},
+		{
+			"translation": "Marth's Enemies",
+			"side": "marth_enemies"
+		},
+		{
+			"translation": "Lucina's Enemies",
+			"side": "lucina_enemies"
+		},
+		{
+			"translation": "Ness's Enemies",
+			"side": "ness_enemies"
+		},
+		{
+			"translation": "Lucas's Enemies",
+			"side": "lucas_enemies"
+		},
+		{
+			"translation": "Samus's Enemies",
+			"side": "samus_enemies"
+		},
+		{
+			"translation": "Fox's Enemies",
+			"side": "fox_enemies"
+		},
+		{
+			"translation": "Little Mac's Enemies",
+			"side": "mac_enemies"
+		},
+		{	
+			"translation": "Ice Climbers' Enemies",
+			"side": "ice_enemies"
+		},
+		{
+			"translation": "Duck Hunt's Enemies",
+			"side": "duck_enemies"
+		},
+		{
+			"translation": "Villager's Enemies",
+			"side": "villager_enemies"
+		}
+	],
+	"variables": {
+	
+		
+	
+		"mariostartup": "",
+		"mariohelp": "",
+		"mariohelp2": "",
+		"marioinfo": "",
+		"mariotutorial": "",
+		
+		"allMario": ["mario"],
+		
+		
+		"bowserstartup": "",
+		"bowserhelp": "",
+		"bowserhelp2": "",
+		"bowserinfo": "",
+		"bowsertutorial": "",
+		
+		"allBowser": ["bowser"],
+		
+		
+		"kirbystartup": "",
+		"kirbyhelp": "",
+		"kirbyhelp2": "",
+		"kirby_newhelp": "",
+		"kirby_newhelp2": "",
+		"kirbyinfo": "",
+		"kirbytutorial": "While you may only have one ability at your disposal, Copy, it is one of the strongest in the entire game. Not only does it act as an Inspect, thus allowing you to gain information, but it also gives you the power to wield multiple actions at various points in the game. This amount of information and flexibility makes you a very potent ally, allowing you to form connections with other powerful roles who can offer you reliable protection and killing power, two things you lack. Additionally, copying any of your enemies will make you immune to kills from them, giving you a rather unique form of defense!",
+		
+		"allKirby": ["kirby", "kirby_mario", "kirby_bowser", "kirby_meta", "kirby_pikachu", "kirby_mewtwo", "kirby_link", "kirby_ganondorf", "kirby_marth", "kirby_lucina", "kirby_ness", "kirby_lucas", "kirby_samus", "kirby_fox", "kirby_mac", "kirby_ice", "kirby_duck", "kirby_villager"],
+		
+		"kirbyCopy": {
+			"inhale": {
+				"command": ["dummy", "copy"],
+				"priority": "variable:kirbyCopyPrio",
+				"common": "Self",
+				"target": "AnyButSelf",
+				"copymsg": "",
+				"noRepeat": true,
+				"dummyusermsg": "You copied ~TargetRole~, gaining a new secondary ability!",
+				"dummytargetmsg": "",
+				"dummybroadcastmsg": "",
+				"usermsg": "",
+				"copyAs": {
+					"kirby_mario": "variable:allMario",
+					"kirby_bowser": "variable:allBowser",
+					"kirby_meta": "variable:allMeta",
+					"kirby_pikachu": "variable:allPikachu",
+					"kirby_mewtwo": "variable:allMewtwo",
+					"kirby_link": "variable:allLink",
+					"kirby_ganondorf": "variable:allGanondorf",
+					"kirby_marth": "variable:allMarth",
+					"kirby_lucina": "variable:allLucina",
+					"kirby_ness": "variable:allNess",
+					"kirby_lucas": "variable:allLucas",
+					"kirby_samus": "variable:allSamus",
+					"kirby_fox": "variable:allFox",
+					"kirby_mac": "variable:allMac",
+					"kirby_ice": "variable:allIce",
+					"kirby_duck": "variable:allDuck",
+					"kirby_villager": "variable:allVillager"
+				}
+			},
+			
+		"kirbyRevert": {
+			"revert": {
+				"command": ["dummy2", "copy"],
+				"priority": "variable:kirbyRevertPrio",
+				"common": "Self",
+				"target": "Self",
+				"copymsg": "",
+				"dummy2usermsg": "You reverted back to your original self, losing your secondary ability!",
+				"usermsg": "",
+				"copyAs": {
+					"kirby": "variable:allKirby"
+				}
+			},
+		
+		"inspectAsMario": {
+			{"revealAs": "mario"}},
+		"inspectAsBowser": {
+			{"revealAs": "bowser"}},
+		"inspectAsMeta": {
+			{"revealAs": "meta"}},
+		"inspectAsPikachu": {
+			{"revealAs": "pikachu"}},
+		"inspectAsMewtwo": {
+			{"revealAs": "mewtwo"}},
+		"inspectAsLink": {
+			{"revealAs": "link"}},
+		"inspectAsGanondorf": {
+			{"revealAs": "ganondorf"}},
+		"inspectAsMarth": {
+			{"revealAs": "marth"}},
+		"inspectAsLucina": {
+			{"revealAs": "lucina"}},
+		"inspectAsNess": {
+			{"revealAs": "ness"}},
+		"inspectAsLucas": {
+			{"revealAs": "lucas"}},
+		"inspectAsSamus": {
+			{"revealAs": "samus"}},
+		"inspectAsFox": {
+			{"revealAs": "fox"}},
+		"inspectAsMac": {
+			{"revealAs": "mac"}},
+		"inspectAsIce": {
+			{"revealAs": "ice"}},
+		"inspectAsDuck": {
+			{"revealAs": "duck"}},
+		"inspectAsVillager": {
+			{"revealAs": "villager"}},
+		
+		"evadeMario": {
+			"mode": { "msg": "~Self~ evaded your kill!", "ignore": [ "variable:allMario" ] } },
+		"evadeBowser": {
+			"mode": { "msg": "~Self~ evaded your kill!", "ignore": [ "variable:allBowser" ]	} },
+		"evadeMeta": {
+			"mode": { "msg": "You tried to kill ~Self~, but then you realized that they look just like you...they must be a Kirby in disguise!", "ignore": [ "variable:allMeta" ] } },
+		"evadeLink": {
+			"mode": { "msg": "~Self~ evaded your kill!", "ignore": [ "variable:allLink" ] } },
+		"evadeGanon": {
+			"mode": { "msg": "~Self~ evaded your kill!", "ignore": [ "variable:allGanondorf" ] } },
+		"evadeMarth": {
+			"mode": { "msg": "~Self~ evaded your kill!", "ignore": [ "variable:allMarth" ] } }, 
+		"evadeLucina": {
+			"mode": { "msg": "~Self~ evaded your kill!", "ignore": [ "variable:allLucina" ] } },
+		"evadeNess": {
+			"mode": { "msg": "~Self~ evaded your kill!", "ignore": [ "variable:allNess" ] }	},
+		"evadeLucas": {
+			"mode": { "msg": "~Self~ evaded your kill!", "ignore": [ "variable:allLucas" ] } },
+		"evadeSamus": {
+			"mode": { "msg": "~Self~ evaded your kill!", "ignore": [ "variable:allSamus" ] } },
+		"evadeFox": {
+			"mode": { "msg": "~Self~ evaded your kill!", "ignore": [ "variable:allFox" ] } },
+		"evadeMac": {
+			"mode": { "msg": "~Self~ evaded your kill!", "ignore": [ "variable:allMac" ] } },
+		"evadeIce": {
+			"mode": { "msg": "~Self~ evaded your kill!", "ignore": [ "variable:allIce" ] } },
+		"evadeDuck": {
+			"mode": { "msg": "~Self~ evaded your kill!", "ignore": [ "variable:allDuck" ] } },
+		"evadeVillager": {
+			"mode": { "msg": "~Self~ evaded your kill!", "ignore": [ "variable:allVillager" ] } },
+				
+				
+				
+		"metastartup": "",
+		"metahelp": "",
+		"metahelp2": "",
+		"metainfo": "",
+		"metatutorial": "",
+		
+		
+		
+		"pikachustartup": "",
+		"pikachuhelp": "",
+		"pikachuhelp2": "",
+		"pikachuinfo": "",
+		"pikachututorial": "",
+		
+		
+		
+		"mewtwostartup": "",
+		"mewtwohelp": "",
+		"mewtwohelp2": "",
+		"mewtwoinfo": "",
+		"mewtwotutorial": "",
+		
+		
+		
+		"linkstartup": "",
+		"linkhelp": "",
+		"linkhelp2": "",
+		"linkinfo": "",
+		"linktutorial": "",
+		
+		
+		
+		"ganonstartup": "",
+		"ganonhelp": "",
+		"ganonhelp2": "",
+		"ganoninfo": "",
+		"ganontutorial": "",
+		
+		
+		
+		"marthstartup": "",
+		"marthhelp": "",
+		"marthhelp2": "",
+		"marthinfo": "",
+		"marthtutorial": "",
+		
+		
+		
+		"lucinastartup": "",
+		"lucinahelp": "",
+		"lucinahelp2": "",
+		"lucinainfo": "",
+		"lucinatutorial": "",
+		
+		
+		
+		"nessstartup": "",
+		"nesshelp": "",
+		"lucashelp2": "",
+		"lucasinfo": "",
+		"lucastutorial": "",
+		
+		
+		
+		"samusstartup": "",
+		"samushelp": "",
+		"samushelp2": "",
+		"samusinfo": "",
+		"samustutorial": "",
+		
+		
+		
+		"foxstartup": "",
+		"foxhelp": "",
+		"foxhelp2": "",
+		"foxinfo": "",
+		"foxtutorial": "",
+		
+		
+		
+		"macstartup": "",
+		"machelp": "",
+		"machelp2": "",
+		"macinfo": "",
+		"mactutorial": "Your main weapon is sheer killing power. However, your lack of information gaining abilities means it will be difficult for you to effectively kill your enemies without randing. Your best bet is to utilize your kill early on so you can figure out who may be evading kills; this will keep you from accidentally hitting an evader with your secondary kill. Pay attention to exposes as this will be your main way of figuring out who your allies are, and who your enemies are. If you happen to find an ally, reach out to them ASAP so that you can coordinate your actions more easily.",
+		
+		"allMac": ["mac"],
+		
+		"macKill": {
+			"kill": {
+				"priority": "variable:macKillPrio",
+				"target": "AnyButSelf",
+				"common": "Self",
+				"inputmsg": "'Alright ~Target~, let's see if you can handle a sucker punch to the face!'"
+			}
+		},
+		
+		"macSecondKill": {
+			"KO": {
+				"command": ["kill", "dummy3"],
+				"priority": "variable:macKillPrio",
+				"target": "AnyButSelf",
+				"common": "Self",
+				"pierce": true,
+				"limit": 3,
+				"inputmsg": "'All this energy...I think I can feel a KO punch coming on! Get ready, ~Target~!'",
+				"dummy3broadcastmsg": "Little Mac goes in for the KO punch...but misses miserably! ~Self~ is devastated from the loss!"
+			}
+		},
+		
+		"macIgnoresDistract": {
+			"mode": "ignore",
+			"msg": "Someone tried to distract you last night, but nobody can stop the Mean Green Killing Machine!"
+		},
+		
+		
+		
+		"icestartup": "",
+		"icehelp": "",
+		"icehelp2": "",
+		"iceinfo": "",
+		"icetutorial": "",
+		
+		
+		
+		"duckstartup": "",
+		"duckhelp": "",
+		"duckhelp2": "",
+		"duckinfo": "",
+		"ducktutorial": "",
+		
+		
+		
+		"villagerstartup": "",
+		"villagerhelp": "",
+		"villagerhelp2": "",
+		"villagerinfo": "",
+		"villagertutorial": "",
